@@ -1,4 +1,5 @@
 import javax.imageio.ImageIO;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -10,15 +11,24 @@ public class Card {
     private static int color;
     private static BufferedImage image;
 
-    public static void CardSelection() throws IOException {
+    public void getCard(Graphics g) throws IOException {
+        cardSelection();
+        drawCard(g);
+    }
+
+    public static void cardSelection() throws IOException {
         Random random = new Random();
         value = random.nextInt(12) + 1; //getting the value of a card
         color = random.nextInt(3) + 1;  //getting the color of a card
 
-        CardImage();
+        cardImage();
     }
 
-    public static void CardImage() throws IOException {    //giving a card right image
+    public void drawCard(Graphics g) {
+        g.drawImage(image, 0, 0, null);
+    }
+
+    public static void cardImage() throws IOException {    //giving a card right image
         switch (value) {
             case 1:
                 switch (color){
