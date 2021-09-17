@@ -42,7 +42,7 @@ public class BJ_Window extends JFrame {
 
         buttonSplit.setBounds(460, 750, 90, 100);
 
-        ImageIcon icon = new ImageIcon("data/img/doublem.png");
+        ImageIcon icon = new ImageIcon("data/img/icon.png");
         buttonSplit.setHorizontalTextPosition(JButton.CENTER);
         buttonSplit.setIcon(icon);
 
