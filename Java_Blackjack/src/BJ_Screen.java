@@ -6,29 +6,17 @@ import java.io.IOException;
 
 public class BJ_Screen extends JPanel {
 
-    /*
-    private Thread thread;
-    private Card card;
+    JButton button;
 
-    public BJ_Screen() {
-        thread = new Thread((Runnable) this);
-        card = new Card();
-    }
-
-    public void start() {
-        thread = new Thread((Runnable) this);
-        thread.start(); //actually idk why imo useless
-    }
-    */
-
-    public void background(Graphics g) throws IOException {
-        g.drawImage(ImageIO.read(new File("data/img/BackgroundHD.jpg")),0,0,null);
+    public void Buttons(){
+        button = new JButton();
+        button.setBounds(200, 100, 100, 50);
     }
 
     @Override
-    public void paint(Graphics g){
+    public void  paint(Graphics g){
         try {
-            background(g);
+            g.drawImage(ImageIO.read(new File("data/img/BackgroundHD.jpg")),0,0,null);
         } catch (IOException e) {
             e.printStackTrace();
         }
