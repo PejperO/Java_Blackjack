@@ -17,11 +17,10 @@ public class Card {
         drawCard(g);
     }
 
-    public static void cardSelection() throws IOException {
+    public static void cardSelection(){
         Random random = new Random();
         value = random.nextInt(12) + 1; //getting the value of a card
-        color = random.nextInt(3) + 1;  //getting the color of a card
-
+        //color = random.nextInt(3) + 1;  //getting the color of a card
         color = 1;  //bck of not having more cards for now
     }
 

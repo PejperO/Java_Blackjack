@@ -36,7 +36,7 @@ public class BJ_Window extends JFrame {
         add(buttonHit);
 
         JButton buttonDouble = new JButton();
-        buttonDouble.setBounds(700, 750, 130, 100);
+        buttonDouble.setBounds(710, 750, 120, 100);
         buttonDouble.setIcon(new ImageIcon("data/img/double.png"));
         buttonDouble.setText("DOUBLE");
         buttonProperties(buttonDouble);
