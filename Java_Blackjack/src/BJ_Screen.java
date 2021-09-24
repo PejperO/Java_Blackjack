@@ -9,7 +9,7 @@ public class BJ_Screen extends JPanel {
     @Override
     public void  paint(Graphics g){ //making a background
         try {
-            g.drawImage(ImageIO.read(new File("data/img/Background.jpg")),0,0,null);
+            g.drawImage(ImageIO.read(new File("data/img/BGround.jpg")),0,0,null);
         } catch (IOException e) {
             e.printStackTrace();
         }

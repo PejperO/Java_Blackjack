@@ -13,6 +13,7 @@ public class Card {
 
     public void getCard(Graphics g) throws IOException {
         cardSelection();
+        cardImage();
         drawCard(g);
     }
 
@@ -21,7 +22,7 @@ public class Card {
         value = random.nextInt(12) + 1; //getting the value of a card
         color = random.nextInt(3) + 1;  //getting the color of a card
 
-        cardImage();
+        color = 1;  //bck of not having more cards for now
     }
 
     public void drawCard(Graphics g) {
