@@ -8,7 +8,6 @@ public class BJ_Screen extends JPanel {
 
     @Override
     public void paint(Graphics g){
-
         backGround(g);  //making a background
         testedCards(g); //preview
 
@@ -17,12 +16,16 @@ public class BJ_Screen extends JPanel {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
     public static void backGround(Graphics g){ //making a background
-        try {
+        try {   //table look
             g.drawImage(ImageIO.read(new File("data/img/BGround.jpg")),0,0,null);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {   //2nd dealer card
+            g.drawImage(ImageIO.read(new File("data/img/Cards/reverse.png")),1115,10,null);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -51,10 +54,5 @@ public class BJ_Screen extends JPanel {
             e.printStackTrace();
         }
 
-        try {   //2nd dealer card
-            g.drawImage(ImageIO.read(new File("data/img/Cards/reverse.png")),1115,10,null);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 }

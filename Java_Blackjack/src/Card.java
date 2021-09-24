@@ -18,16 +18,15 @@ public class Card {
 
     public static void cardSelection(){
         cardValue = (int) (Math.random() * 13) + 1; //getting the value of a card (1 - 13)
-        cardColor = (int) (Math.random() * 4) + 1;  //getting the color of a card (1 - 4)
+        //cardColor = (int) (Math.random() * 4) + 1;  //getting the color of a card (1 - 4)
         cardColor = 1;  //for now only having one color
     }
 
     public void drawCard(Graphics g) {
-        g.drawImage(cardImage, 0, 0, null);
+        g.drawImage(cardImage, 100, 100, null);
     }
 
     public static void cardImage() throws IOException {    //giving a card right image
-
         switch (cardValue) {
             case 1:
                 switch (cardColor) {

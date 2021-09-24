@@ -65,6 +65,7 @@ public class BJ_Window extends JFrame {
         button.setHorizontalTextPosition(JButton.CENTER);   //making button look better
         button.setVerticalTextPosition(JButton.BOTTOM);
         button.setForeground(Color.BLACK);
+
         button.setFocusable(false);
         button.setVisible(true);
         button.setOpaque(false);
