@@ -3,13 +3,12 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.Random;
 
 public class Card {
 
-    private static int value;
-    private static int color;
-    private static BufferedImage image;
+    private static int cardValue;
+    private static int cardColor;
+    private static BufferedImage cardImage;
 
     public void getCard(Graphics g) throws IOException {
         cardSelection();
@@ -18,161 +17,122 @@ public class Card {
     }
 
     public static void cardSelection(){
-        Random random = new Random();
-        value = random.nextInt(12) + 1; //getting the value of a card
-        //color = random.nextInt(3) + 1;  //getting the color of a card
-        color = 1;  //bck of not having more cards for now
+        cardValue = (int) (Math.random() * 13) + 1; //getting the value of a card (1 - 13)
+        cardColor = (int) (Math.random() * 4) + 1;  //getting the color of a card (1 - 4)
+        cardColor = 1;  //for now only having one color
     }
 
     public void drawCard(Graphics g) {
-        g.drawImage(image, 0, 0, null);
+        g.drawImage(cardImage, 0, 0, null);
     }
 
     public static void cardImage() throws IOException {    //giving a card right image
-        switch (value) {
+
+        switch (cardValue) {
             case 1:
-                switch (color){
-                    case 1:
-                        image = ImageIO.read(new File("data/img/11.png"));
-                    case 2:
-                        image = ImageIO.read(new File("data/img/12.png"));
-                    case 3:
-                        image = ImageIO.read(new File("data/img/13.png"));
-                    case 4:
-                        image = ImageIO.read(new File("data/img/14.png"));
+                switch (cardColor) {
+                    case 1 -> cardImage = ImageIO.read(new File("data/img/Cards/11.png"));
+                    case 2 -> cardImage = ImageIO.read(new File("data/img/Cards/12.png"));
+                    case 3 -> cardImage = ImageIO.read(new File("data/img/Cards/13.png"));
+                    case 4 -> cardImage = ImageIO.read(new File("data/img/Cards/14.png"));
                 }
+                break;
             case 2:
-                switch (color){
-                    case 1:
-                        image = ImageIO.read(new File("data/img/21.png"));
-                    case 2:
-                        image = ImageIO.read(new File("data/img/22.png"));
-                    case 3:
-                        image = ImageIO.read(new File("data/img/23.png"));
-                    case 4:
-                        image = ImageIO.read(new File("data/img/24.png"));
+                switch (cardColor) {
+                    case 1 -> cardImage = ImageIO.read(new File("data/img/Cards/21.png"));
+                    case 2 -> cardImage = ImageIO.read(new File("data/img/Cards/22.png"));
+                    case 3 -> cardImage = ImageIO.read(new File("data/img/Cards/23.png"));
+                    case 4 -> cardImage = ImageIO.read(new File("data/img/Cards/24.png"));
                 }
+                break;
             case 3:
-                switch (color){
-                    case 1:
-                        image = ImageIO.read(new File("data/img/31.png"));
-                    case 2:
-                        image = ImageIO.read(new File("data/img/32.png"));
-                    case 3:
-                        image = ImageIO.read(new File("data/img/33.png"));
-                    case 4:
-                        image = ImageIO.read(new File("data/img/34.png"));
+                switch (cardColor) {
+                    case 1 -> cardImage = ImageIO.read(new File("data/img/Cards/31.png"));
+                    case 2 -> cardImage = ImageIO.read(new File("data/img/Cards/32.png"));
+                    case 3 -> cardImage = ImageIO.read(new File("data/img/Cards/33.png"));
+                    case 4 -> cardImage = ImageIO.read(new File("data/img/Cards/34.png"));
                 }
+                break;
             case 4:
-                switch (color){
-                    case 1:
-                        image = ImageIO.read(new File("data/img/41.png"));
-                    case 2:
-                        image = ImageIO.read(new File("data/img/42.png"));
-                    case 3:
-                        image = ImageIO.read(new File("data/img/43.png"));
-                    case 4:
-                        image = ImageIO.read(new File("data/img/44.png"));
+                switch (cardColor) {
+                    case 1 -> cardImage = ImageIO.read(new File("data/img/Cards/41.png"));
+                    case 2 -> cardImage = ImageIO.read(new File("data/img/Cards/42.png"));
+                    case 3 -> cardImage = ImageIO.read(new File("data/img/Cards/43.png"));
+                    case 4 -> cardImage = ImageIO.read(new File("data/img/Cards/44.png"));
                 }
+                break;
             case 5:
-                switch (color){
-                    case 1:
-                        image = ImageIO.read(new File("data/img/51.png"));
-                    case 2:
-                        image = ImageIO.read(new File("data/img/52.png"));
-                    case 3:
-                        image = ImageIO.read(new File("data/img/53.png"));
-                    case 4:
-                        image = ImageIO.read(new File("data/img/54.png"));
+                switch (cardColor) {
+                    case 1 -> cardImage = ImageIO.read(new File("data/img/Cards/51.png"));
+                    case 2 -> cardImage = ImageIO.read(new File("data/img/Cards/52.png"));
+                    case 3 -> cardImage = ImageIO.read(new File("data/img/Cards/53.png"));
+                    case 4 -> cardImage = ImageIO.read(new File("data/img/Cards/54.png"));
                 }
+                break;
             case 6:
-                switch (color){
-                    case 1:
-                        image = ImageIO.read(new File("data/img/61.png"));
-                    case 2:
-                        image = ImageIO.read(new File("data/img/62.png"));
-                    case 3:
-                        image = ImageIO.read(new File("data/img/63.png"));
-                    case 4:
-                        image = ImageIO.read(new File("data/img/64.png"));
+                switch (cardColor) {
+                    case 1 -> cardImage = ImageIO.read(new File("data/img/Cards/61.png"));
+                    case 2 -> cardImage = ImageIO.read(new File("data/img/Cards/62.png"));
+                    case 3 -> cardImage = ImageIO.read(new File("data/img/Cards/63.png"));
+                    case 4 -> cardImage = ImageIO.read(new File("data/img/Cards/64.png"));
                 }
+                break;
             case 7:
-                switch (color){
-                    case 1:
-                        image = ImageIO.read(new File("data/img/71.png"));
-                    case 2:
-                        image = ImageIO.read(new File("data/img/72.png"));
-                    case 3:
-                        image = ImageIO.read(new File("data/img/73.png"));
-                    case 4:
-                        image = ImageIO.read(new File("data/img/74.png"));
+                switch (cardColor) {
+                    case 1 -> cardImage = ImageIO.read(new File("data/img/Cards/71.png"));
+                    case 2 -> cardImage = ImageIO.read(new File("data/img/Cards/72.png"));
+                    case 3 -> cardImage = ImageIO.read(new File("data/img/Cards/73.png"));
+                    case 4 -> cardImage = ImageIO.read(new File("data/img/Cards/74.png"));
                 }
+                break;
             case 8:
-                switch (color){
-                    case 1:
-                        image = ImageIO.read(new File("data/img/81.png"));
-                    case 2:
-                        image = ImageIO.read(new File("data/img/82.png"));
-                    case 3:
-                        image = ImageIO.read(new File("data/img/83.png"));
-                    case 4:
-                        image = ImageIO.read(new File("data/img/84.png"));
+                switch (cardColor) {
+                    case 1 -> cardImage = ImageIO.read(new File("data/img/Cards/81.png"));
+                    case 2 -> cardImage = ImageIO.read(new File("data/img/Cards/82.png"));
+                    case 3 -> cardImage = ImageIO.read(new File("data/img/Cards/83.png"));
+                    case 4 -> cardImage = ImageIO.read(new File("data/img/Cards/84.png"));
                 }
+                break;
             case 9:
-                switch (color){
-                    case 1:
-                        image = ImageIO.read(new File("data/img/91.png"));
-                    case 2:
-                        image = ImageIO.read(new File("data/img/92.png"));
-                    case 3:
-                        image = ImageIO.read(new File("data/img/93.png"));
-                    case 4:
-                        image = ImageIO.read(new File("data/img/94.png"));
+                switch (cardColor) {
+                    case 1 -> cardImage = ImageIO.read(new File("data/img/Cards/91.png"));
+                    case 2 -> cardImage = ImageIO.read(new File("data/img/Cards/92.png"));
+                    case 3 -> cardImage = ImageIO.read(new File("data/img/Cards/93.png"));
+                    case 4 -> cardImage = ImageIO.read(new File("data/img/Cards/94.png"));
                 }
+                break;
             case 10:
-                switch (color){
-                    case 1:
-                        image = ImageIO.read(new File("data/img/101.png"));
-                    case 2:
-                        image = ImageIO.read(new File("data/img/102.png"));
-                    case 3:
-                        image = ImageIO.read(new File("data/img/103.png"));
-                    case 4:
-                        image = ImageIO.read(new File("data/img/104.png"));
+                switch (cardColor) {
+                    case 1 -> cardImage = ImageIO.read(new File("data/img/Cards/101.png"));
+                    case 2 -> cardImage = ImageIO.read(new File("data/img/Cards/102.png"));
+                    case 3 -> cardImage = ImageIO.read(new File("data/img/Cards/103.png"));
+                    case 4 -> cardImage = ImageIO.read(new File("data/img/Cards/104.png"));
                 }
+                break;
             case 11:
-                switch (color){
-                    case 1:
-                        image = ImageIO.read(new File("data/img/111.png"));
-                    case 2:
-                        image = ImageIO.read(new File("data/img/112.png"));
-                    case 3:
-                        image = ImageIO.read(new File("data/img/113.png"));
-                    case 4:
-                        image = ImageIO.read(new File("data/img/114.png"));
+                switch (cardColor) {
+                    case 1 -> cardImage = ImageIO.read(new File("data/img/Cards/111.png"));
+                    case 2 -> cardImage = ImageIO.read(new File("data/img/Cards/112.png"));
+                    case 3 -> cardImage = ImageIO.read(new File("data/img/Cards/113.png"));
+                    case 4 -> cardImage = ImageIO.read(new File("data/img/Cards/114.png"));
                 }
+                break;
             case 12:
-                switch (color){
-                    case 1:
-                        image = ImageIO.read(new File("data/img/121.png"));
-                    case 2:
-                        image = ImageIO.read(new File("data/img/122.png"));
-                    case 3:
-                        image = ImageIO.read(new File("data/img/123.png"));
-                    case 4:
-                        image = ImageIO.read(new File("data/img/124.png"));
+                switch (cardColor) {
+                    case 1 -> cardImage = ImageIO.read(new File("data/img/Cards/121.png"));
+                    case 2 -> cardImage = ImageIO.read(new File("data/img/Cards/122.png"));
+                    case 3 -> cardImage = ImageIO.read(new File("data/img/Cards/123.png"));
+                    case 4 -> cardImage = ImageIO.read(new File("data/img/Cards/124.png"));
                 }
+                break;
             case 13:
-                switch (color){
-                    case 1:
-                        image = ImageIO.read(new File("data/img/131.png"));
-                    case 2:
-                        image = ImageIO.read(new File("data/img/132.png"));
-                    case 3:
-                        image = ImageIO.read(new File("data/img/133.png"));
-                    case 4:
-                        image = ImageIO.read(new File("data/img/134.png"));
+                switch (cardColor) {
+                    case 1 -> cardImage = ImageIO.read(new File("data/img/Cards/131.png"));
+                    case 2 -> cardImage = ImageIO.read(new File("data/img/Cards/132.png"));
+                    case 3 -> cardImage = ImageIO.read(new File("data/img/Cards/133.png"));
+                    case 4 -> cardImage = ImageIO.read(new File("data/img/Cards/134.png"));
                 }
+                break;
         }
     }
 }
