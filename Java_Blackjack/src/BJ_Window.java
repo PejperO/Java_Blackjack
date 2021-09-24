@@ -28,42 +28,67 @@ public class BJ_Window extends JFrame {
     public void buttonPanel(){
         JButton buttonHit = new JButton();
         buttonHit.setBounds(880, 750, 90, 100);
+        ImageIcon iconHit = new ImageIcon("data/img/hit.png");
+        buttonHit.setHorizontalTextPosition(JButton.CENTER);
+        buttonHit.setIcon(iconHit);
         buttonHit.setText("HIT");
+        buttonHit.setFont(new Font("Comic Sans", Font.BOLD,20));
+        buttonHit.setVerticalTextPosition(JButton.BOTTOM);
+        buttonHit.setForeground(Color.BLACK);
         buttonHit.setFocusable(false);
+        buttonHit.setVisible(true);
+        buttonHit.setOpaque(false);
+        buttonHit.setContentAreaFilled(false);
+        buttonHit.setBorderPainted(false);
         add(buttonHit);
 
         JButton buttonDouble = new JButton();
-        buttonDouble.setBounds(740, 750, 90, 100);
-        buttonDouble.setText("Double");
+        buttonDouble.setBounds(700, 750, 130, 100);
+        ImageIcon iconDouble = new ImageIcon("data/img/double.png");
+        buttonDouble.setHorizontalTextPosition(JButton.CENTER);
+        buttonDouble.setIcon(iconDouble);
+        buttonDouble.setText("DOUBLE");
+        buttonDouble.setFont(new Font("Comic Sans", Font.BOLD,20));
+        buttonDouble.setVerticalTextPosition(JButton.BOTTOM);
+        buttonDouble.setForeground(Color.BLACK);
         buttonDouble.setFocusable(false);
+        buttonDouble.setVisible(true);
+        buttonDouble.setOpaque(false);
+        buttonDouble.setContentAreaFilled(false);
+        buttonDouble.setBorderPainted(false);
         add(buttonDouble);
 
         JButton buttonSplit = new JButton();
-
         buttonSplit.setBounds(460, 750, 90, 100);
-
-        ImageIcon icon = new ImageIcon("data/img/icon.png");
+        ImageIcon iconSplit = new ImageIcon("data/img/split.png");
         buttonSplit.setHorizontalTextPosition(JButton.CENTER);
-        buttonSplit.setIcon(icon);
-
-        buttonSplit.setText("Split");
-        buttonSplit.setFont(new Font("Comic Sans", Font.BOLD,25));
+        buttonSplit.setIcon(iconSplit);
+        buttonSplit.setText("SPLIT");
+        buttonSplit.setFont(new Font("Comic Sans", Font.BOLD,20));
         buttonSplit.setVerticalTextPosition(JButton.BOTTOM);
         buttonSplit.setForeground(Color.BLACK);
-
         buttonSplit.setFocusable(false);
         buttonSplit.setVisible(true);
         buttonSplit.setOpaque(false);
         buttonSplit.setContentAreaFilled(false);
         buttonSplit.setBorderPainted(false);
         //buttonSplit.setBorder(BorderFactory.createEtchedBorder());
-
         add(buttonSplit);
 
         JButton buttonStay = new JButton();
         buttonStay.setBounds(320, 750, 90, 100);
-        buttonStay.setText("Stay");
+        ImageIcon iconStay = new ImageIcon("data/img/stay.png");
+        buttonStay.setHorizontalTextPosition(JButton.CENTER);
+        buttonStay.setIcon(iconStay);
+        buttonStay.setText("STAY");
+        buttonStay.setFont(new Font("Comic Sans", Font.BOLD,20));
+        buttonStay.setVerticalTextPosition(JButton.BOTTOM);
+        buttonStay.setForeground(Color.BLACK);
         buttonStay.setFocusable(false);
+        buttonStay.setVisible(true);
+        buttonStay.setOpaque(false);
+        buttonStay.setContentAreaFilled(false);
+        buttonStay.setBorderPainted(false);
         add(buttonStay);
         //buttonStay.setEnabled(false);
     }
