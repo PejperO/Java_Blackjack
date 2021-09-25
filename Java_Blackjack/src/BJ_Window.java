@@ -6,7 +6,7 @@ public class BJ_Window extends JFrame {
     public static int windowSizeX = 1_280;  //window size...
     public static int windowSizeY = 920;
 
-    public BJ_Window() {
+    public BJ_Window(){
         super("Black Jack");    //making window look better
         setSize(windowSizeX, windowSizeY);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -16,11 +16,13 @@ public class BJ_Window extends JFrame {
 
         buttonPanel();
 
-        BJ_Screen bj = new BJ_Screen(); //for now just background
+        BJ_Screen bj = new BJ_Screen(); //adding a playable environment
         add(bj);
+        bj.start();
+
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
         BJ_Window bj = new BJ_Window(); //making window
         bj.setVisible(true);
     }
@@ -60,8 +62,10 @@ public class BJ_Window extends JFrame {
         add(buttonStay);
     }
 
-    private void buttonProperties(JButton button) { //mutual button properties
+    private static void buttonProperties(JButton button) { //mutual button properties
+
         button.setFont(new Font("Comic Sans", Font.BOLD,20));    //font
+
         button.setHorizontalTextPosition(JButton.CENTER);   //making button look better
         button.setVerticalTextPosition(JButton.BOTTOM);
         button.setForeground(Color.BLACK);
@@ -70,6 +74,6 @@ public class BJ_Window extends JFrame {
         button.setVisible(true);
         button.setOpaque(false);
         button.setContentAreaFilled(false);
-        button.setBorderPainted(false);
+        //button.setBorderPainted(false);
     }
 }

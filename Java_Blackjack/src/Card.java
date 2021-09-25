@@ -10,10 +10,10 @@ public class Card {
     private static int cardColor;
     private static BufferedImage cardImage;
 
-    public void getCard(Graphics g) throws IOException {
+    public void getCard(Graphics g, int x, int y) throws IOException {
         cardSelection();
         cardImage();
-        drawCard(g);
+        drawCard(g,x,y);
     }
 
     public static void cardSelection(){
@@ -22,8 +22,16 @@ public class Card {
         cardColor = 1;  //for now only having one color
     }
 
-    public void drawCard(Graphics g) {
-        g.drawImage(cardImage, 100, 100, null);
+    public void drawCard(Graphics g, int x, int y) {
+        g.drawImage(cardImage, x, y, null); //drawing a card
+    }
+
+    public void drawReverse(Graphics g, int x, int y){
+        try {   //drawing a reverse of a card
+            g.drawImage(ImageIO.read(new File("data/img/Cards/reverse.png")), x, y, null);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void cardImage() throws IOException {    //giving a card right image
