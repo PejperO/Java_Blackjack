@@ -22,6 +22,7 @@ public class BJ_Screen extends JPanel implements Runnable{
     }
 
     public void drawStats(Graphics g){  //some stats
+        //setFont(new Font("Comic Sans", Font.BOLD,20));
         g.drawString("YOUR MONEY: " + engine.yourMoney, 20, 20);
         g.drawString("Bet Value" + engine.betValue, 20, 40);
     }
