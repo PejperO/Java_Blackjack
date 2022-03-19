@@ -22,7 +22,7 @@ public class Card {
         cardColor = 1;  //for now only having one color
     }
 
-    public void drawCard(Graphics g, int x, int y) {
+    public void drawCard(Graphics g, int x, int y) throws IOException {
         g.drawImage(cardImage, x, y, null); //drawing a card
     }
 
