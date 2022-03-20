@@ -36,7 +36,7 @@ public class BJ_Window extends JFrame {
         buttonHit.setIcon(new ImageIcon("data/img/Buttons/hit.png"));
         buttonHit.setText("HIT");
         buttonProperties(buttonHit);    //more properties
-        buttonHit.addActionListener(e -> System.out.println("HIT")); //after click - shot message
+        //buttonHit.addActionListener(e -> System.out.println("HIT"));
         buttonHit.addActionListener(e -> buttonHit.setIcon(new ImageIcon("data/img/Buttons/hit_h.png")));
         add(buttonHit);
         buttonHit.addMouseListener(new MouseAdapter() {
@@ -56,6 +56,9 @@ public class BJ_Window extends JFrame {
             public void mouseReleased(MouseEvent me){
                 buttonHit.setIcon(new ImageIcon("data/img/Buttons/hit_e.png"));
                 buttonHit.setForeground(Color.GRAY);
+            }
+            public void mouseClicked(MouseEvent me){
+                System.out.println("HIT");  //after click - shot message
             }
         });
 

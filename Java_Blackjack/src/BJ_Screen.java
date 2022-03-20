@@ -1,5 +1,6 @@
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import javax.swing.plaf.TableHeaderUI;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
@@ -17,8 +18,8 @@ public class BJ_Screen extends JPanel implements Runnable{
     }
 
     public void start(){    //IDK why I use thread
-        //thread = new Thread(this);
-        //thread.start();
+        thread = new Thread(this);
+        thread.start();
     }
 
     public void drawStats(Graphics g){  //some stats
@@ -34,8 +35,19 @@ public class BJ_Screen extends JPanel implements Runnable{
             card.drawReverse(g, 1115, 10 + i);
     }
 
-    public static void testedCards(Graphics g) throws IOException { //to see how it should look like
+    public static void testedCards(Graphics g) throws IOException, InterruptedException { //to see how it should look like
+        int x = 1115, y = 22;
         //1st player card
+        /*
+        for(int i = y; i <= 500; ++i) {
+            card.getCard(g, 1115, i);
+            Thread.sleep(0, 1);
+        }
+        for(int i = x; i >= 550; --i) {
+            card.getCard(g, i, 500);
+            Thread.sleep(0, 1);
+        }
+        */
         card.getCard(g, 550, 500);
 
         //2nd player card
@@ -63,7 +75,7 @@ public class BJ_Screen extends JPanel implements Runnable{
 
         try {
             testedCards(g); //preview
-        } catch (IOException e) {
+        } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
 
