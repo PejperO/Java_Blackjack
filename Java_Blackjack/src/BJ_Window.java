@@ -21,7 +21,6 @@ public class BJ_Window extends JFrame {
         BJ_Screen bj = new BJ_Screen(); //adding a playable environment
         add(bj);
         bj.start();
-
     }
 
     public static void main(String[] args){
@@ -36,12 +35,9 @@ public class BJ_Window extends JFrame {
         buttonHit.setIcon(new ImageIcon("data/img/Buttons/hit.png"));
         buttonHit.setText("HIT");
         buttonProperties(buttonHit);    //more properties
-        //buttonHit.addActionListener(e -> System.out.println("HIT"));
         buttonHit.addActionListener(e -> buttonHit.setIcon(new ImageIcon("data/img/Buttons/hit_h.png")));
-        add(buttonHit);
         buttonHit.addMouseListener(new MouseAdapter() {
-            public void mouseEntered(MouseEvent me)
-            {
+            public void mouseEntered(MouseEvent me){
                 buttonHit.setIcon(new ImageIcon("data/img/Buttons/hit_e.png"));
                 buttonHit.setForeground(Color.GRAY);
             }
@@ -61,6 +57,7 @@ public class BJ_Window extends JFrame {
                 System.out.println("HIT");  //after click - shot message
             }
         });
+        add(buttonHit);
 
         JButton buttonDouble = new JButton();
         buttonDouble.setBounds(710, 750, 120, 100);
@@ -68,10 +65,8 @@ public class BJ_Window extends JFrame {
         buttonDouble.setText("DOUBLE");
         buttonProperties(buttonDouble);
         buttonDouble.addActionListener(e -> System.out.println("DOUBLE"));
-        add(buttonDouble);
         buttonDouble.addMouseListener(new MouseAdapter() {
-            public void mouseEntered(MouseEvent me)
-            {
+            public void mouseEntered(MouseEvent me){
                 buttonDouble.setIcon(new ImageIcon("data/img/Buttons/double_e.png"));
                 buttonDouble.setForeground(Color.GRAY);
             }
@@ -88,6 +83,7 @@ public class BJ_Window extends JFrame {
                 buttonDouble.setForeground(Color.GRAY);
             }
         });
+        add(buttonDouble);
 
         JButton buttonSplit = new JButton();
         buttonSplit.setBounds(460, 750, 90, 100);
@@ -95,10 +91,8 @@ public class BJ_Window extends JFrame {
         buttonSplit.setText("SPLIT");
         buttonProperties(buttonSplit);
         buttonSplit.addActionListener(e -> System.out.println("SPLIT"));
-        add(buttonSplit);
         buttonSplit.addMouseListener(new MouseAdapter() {
-            public void mouseEntered(MouseEvent me)
-            {
+            public void mouseEntered(MouseEvent me){
                 buttonSplit.setIcon(new ImageIcon("data/img/Buttons/split_e.png"));
                 buttonSplit.setForeground(Color.GRAY);
             }
@@ -115,6 +109,7 @@ public class BJ_Window extends JFrame {
                 buttonSplit.setForeground(Color.GRAY);
             }
         });
+        add(buttonSplit);
 
         JButton buttonStay = new JButton(); // I know there is a vay to compress the buttons
         buttonStay.setBounds(320, 750, 90, 100);
@@ -122,10 +117,8 @@ public class BJ_Window extends JFrame {
         buttonStay.setText("STAY");
         buttonProperties(buttonStay);
         buttonStay.addActionListener(e -> System.out.println("STAY"));
-        add(buttonStay);
         buttonStay.addMouseListener(new MouseAdapter() {
-            public void mouseEntered(MouseEvent me)
-            {
+            public void mouseEntered(MouseEvent me){
                 buttonStay.setIcon(new ImageIcon("data/img/Buttons/stay_e.png"));
                 buttonStay.setForeground(Color.GRAY);
             }
@@ -142,6 +135,7 @@ public class BJ_Window extends JFrame {
                 buttonStay.setForeground(Color.GRAY);
             }
         });
+        add(buttonStay);
     }
 
     private static void buttonProperties(JButton button) { //mutual button properties
