@@ -55,6 +55,7 @@ public class BJ_Window extends JFrame {
             }
             public void mouseClicked(MouseEvent me){
                 System.out.println("HIT");  //after click - shot message
+                BJ_Screen.hitButton = true;
             }
         });
         add(buttonHit);

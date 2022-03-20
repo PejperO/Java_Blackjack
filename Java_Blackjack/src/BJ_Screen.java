@@ -1,6 +1,5 @@
 import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.swing.plaf.TableHeaderUI;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
@@ -10,6 +9,9 @@ public class BJ_Screen extends JPanel implements Runnable{
     private Thread thread;
     private final Calculations engine;  //adding different files
     private static Card card;
+    public static int card_position = 0;
+    public static boolean hitButton = false;
+    public static boolean yes = true;
 
     public  BJ_Screen(){    //for easier work on different files
         thread = new Thread(this);
@@ -23,7 +25,7 @@ public class BJ_Screen extends JPanel implements Runnable{
     }
 
     public void drawStats(Graphics g){  //some stats
-        //setFont(new Font("Comic Sans", Font.BOLD,20));
+        //setFont(new Font("Comic Sans", Font.BOLD,20));    //why setting font is making it ugly
         g.drawString("YOUR MONEY: " + engine.yourMoney, 20, 20);
         g.drawString("Bet Value" + engine.betValue, 20, 40);
     }
@@ -33,6 +35,15 @@ public class BJ_Screen extends JPanel implements Runnable{
 
         for(int i=0; i < 12; i=i+2) //adding all cards look
             card.drawReverse(g, 1115, 10 + i);
+    }
+
+    public static void HitCard(Graphics g){
+        try {
+            card.getCard(g,590 + card_position,500);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        card_position += 40;
     }
 
     public static void testedCards(Graphics g) throws IOException, InterruptedException { //to see how it should look like
@@ -67,18 +78,25 @@ public class BJ_Screen extends JPanel implements Runnable{
 
     @Override
     public void paint(Graphics g){
-        try {
-            backGround(g);  //making a background
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        //if(yes) {
+            try {
+                backGround(g);  //making a background
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
-        try {
-            testedCards(g); //preview
-        } catch (IOException | InterruptedException e) {
-            e.printStackTrace();
-        }
+            try {
+                testedCards(g); //preview
+            } catch (IOException | InterruptedException e) {
+                e.printStackTrace();
+            }
+            //yes = false;
+        //}
 
+        if(hitButton) {
+            HitCard(g);
+            hitButton = false;
+        }
         drawStats(g);   //adding stats for better look
     }
 }
