@@ -17,8 +17,8 @@ public class BJ_Screen extends JPanel implements Runnable{
     }
 
     public void start(){    //IDK why I use thread
-        thread = new Thread(this);
-        thread.start();
+        //thread = new Thread(this);
+        //thread.start();
     }
 
     public void drawStats(Graphics g){  //some stats
@@ -28,15 +28,15 @@ public class BJ_Screen extends JPanel implements Runnable{
     }
 
     public static void backGround(Graphics g) throws IOException{ //making a background
-        g.drawImage(ImageIO.read(new File("data/img/BGround3.2.png")),0,0,null);   //table
+        g.drawImage(ImageIO.read(new File("data/img/BGround/BGround3.2.png")),0,0,null);   //table
 
-        for(int i=0; i < 12; i=i+3) //adding all cards look
+        for(int i=0; i < 12; i=i+2) //adding all cards look
             card.drawReverse(g, 1115, 10 + i);
     }
 
     public static void testedCards(Graphics g) throws IOException { //to see how it should look like
         //1st player card
-        card.getCard(g,550,500);
+        card.getCard(g, 550, 500);
 
         //2nd player card
         card.getCard(g,590,500);
