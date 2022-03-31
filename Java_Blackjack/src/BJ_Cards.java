@@ -4,11 +4,11 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-public class Card {
+public class BJ_Cards {
 
-    private static int cardValue;
-    private static int cardColor;
-    private static BufferedImage cardImage;
+    public static int cardValue;
+    public static int cardColor;
+    public static BufferedImage cardImage;
 
     public void getCard(Graphics g, int x, int y) throws IOException {
         cardSelection();
@@ -17,24 +17,24 @@ public class Card {
     }
 
     public static void cardSelection(){
-        cardValue = (int) (Math.random() * 13) + 1; //getting the value of a card (1 - 13)
-        //cardColor = (int) (Math.random() * 4) + 1;  //getting the color of a card (1 - 4)
-        cardColor = 1;  //for now only having one color
+        cardValue = (int) (Math.random() * 13) + 1;
+        //cardColor = (int) (Math.random() * 4) + 1;
+        cardColor = 1;
     }
 
-    public void drawCard(Graphics g, int x, int y) throws IOException {
-        g.drawImage(cardImage, x, y, null); //drawing a card
+    public void drawCard(Graphics g, int x, int y){
+        g.drawImage(cardImage, x, y, null);
     }
 
     public void drawReverse(Graphics g, int x, int y){
-        try {   //drawing a reverse of a card
+        try {
             g.drawImage(ImageIO.read(new File("data/img/Cards/reverse.png")), x, y, null);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public static void cardImage() throws IOException {    //giving a card right image
+    public static void cardImage() throws IOException {
         switch (cardValue) {
             case 1:
                 switch (cardColor) {
