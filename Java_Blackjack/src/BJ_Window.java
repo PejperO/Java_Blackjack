@@ -36,12 +36,12 @@ public class BJ_Window extends JFrame {
     }
 
     public void buttonHit() {
-        JButton buttonHit = new JButton();  //setting button
+        JButton buttonHit = new JButton();
         buttonHit.setBounds(880, 750, 90, 100);
         buttonHit.setIcon(new ImageIcon("data/img/Buttons/hit.png"));
         buttonHit.setText("HIT");
-        buttonProperties(buttonHit);    //more properties
-        buttonHit.addActionListener(e -> buttonHit.setIcon(new ImageIcon("data/img/Buttons/hit_h.png")));
+        buttonProperties(buttonHit);
+        //buttonHit.addActionListener(e -> buttonHit.setIcon(new ImageIcon("data/img/Buttons/hit_h.png")));
         buttonHit.addMouseListener(new MouseAdapter() {
             public void mouseEntered(MouseEvent me) {
                 buttonHit.setIcon(new ImageIcon("data/img/Buttons/hit_e.png"));
@@ -64,7 +64,7 @@ public class BJ_Window extends JFrame {
             }
 
             public void mouseClicked(MouseEvent me) {
-                System.out.println("HIT");  //after click - shot message
+                System.out.println("HIT");
                 BJ_Screen.hitButton = true;
             }
         });
@@ -128,7 +128,7 @@ public class BJ_Window extends JFrame {
     }
 
     public void buttonStay(){
-        JButton buttonStay = new JButton(); // I know there is a vay to compress the buttons
+        JButton buttonStay = new JButton();
         buttonStay.setBounds(320, 750, 90, 100);
         buttonStay.setIcon(new ImageIcon("data/img/Buttons/stay.png"));
         buttonStay.setText("STAY");
@@ -155,11 +155,11 @@ public class BJ_Window extends JFrame {
         add(buttonStay);
     }
 
-    public static void buttonProperties(JButton button) { //mutual button properties
+    public static void buttonProperties(JButton button) {
 
-        button.setFont(new Font("Comic Sans", Font.BOLD,20));    //font
+        button.setFont(new Font("Comic Sans", Font.BOLD,20));
 
-        button.setHorizontalTextPosition(JButton.CENTER);   //making button look better
+        button.setHorizontalTextPosition(JButton.CENTER);
         button.setVerticalTextPosition(JButton.BOTTOM);
         button.setForeground(Color.BLACK);
 

@@ -12,6 +12,7 @@ public class BJ_Screen extends JPanel implements Runnable{
     public static int card_position = 0;
     public static boolean hitButton = false;
 
+
     public BJ_Screen(){
         thread = new Thread(this);
         bj_cards = new BJ_Cards();
@@ -25,22 +26,19 @@ public class BJ_Screen extends JPanel implements Runnable{
 
     public void drawStats(Graphics g){
         g.setFont(new Font("Times new roman", Font.BOLD,20));
+        g.setColor(Color.GRAY);
         g.drawString("YOUR MONEY: " + calculations.yourMoney, 20, 30);
         g.drawString("Bet Value: " + calculations.betValue, 20, 55);
     }
 
     public static void backGround(Graphics g) throws IOException{
         g.drawImage(ImageIO.read(new File("data/img/BGround/BGround3.2.png")),0,0,null);
-        for(int i=0; i < 12; i=i+2) //adding all cards look
+        for(int i=0; i < 12; i=i+2)
             bj_cards.drawReverse(g, 1115, 10 + i);
     }
 
-    public static void HitCard(Graphics g){
-        try {
-            bj_cards.getCard(g,590 + card_position,500);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public static void HitCard(Graphics g) throws IOException{
+        bj_cards.getCard(g, 590 + card_position,500);
         card_position += 40;
     }
 
@@ -70,13 +68,13 @@ public class BJ_Screen extends JPanel implements Runnable{
         try {
             backGround(g);
             testedCards(g);
+
+            if(hitButton) {
+                HitCard(g);
+                hitButton = false;
+            }
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
-        }
-
-        if(hitButton) {
-            HitCard(g);
-            hitButton = false;
         }
 
         drawStats(g);
