@@ -25,9 +25,9 @@ public class BJ_Screen extends JPanel implements Runnable{
     }
 
     public void drawStats(Graphics g){  //some stats
-        //setFont(new Font("Comic Sans", Font.BOLD,20));    //why setting font is making it ugly
-        g.drawString("YOUR MONEY: " + engine.yourMoney, 20, 20);
-        g.drawString("Bet Value" + engine.betValue, 20, 40);
+        g.setFont(new Font("Times new roman", Font.BOLD,20));    //why setting font is making it ugly
+        g.drawString("YOUR MONEY: " + engine.yourMoney, 20, 30);
+        g.drawString("Bet Value: " + engine.betValue, 20, 55);
     }
 
     public static void backGround(Graphics g) throws IOException{ //making a background
@@ -49,6 +49,7 @@ public class BJ_Screen extends JPanel implements Runnable{
     public static void testedCards(Graphics g) throws IOException, InterruptedException { //to see how it should look like
         int x = 1115, y = 22;
         //1st player card
+
         /*
         for(int i = y; i <= 500; ++i) {
             card.getCard(g, 1115, i);
@@ -59,6 +60,7 @@ public class BJ_Screen extends JPanel implements Runnable{
             Thread.sleep(0, 1);
         }
         */
+
         card.getCard(g, 550, 500);
 
         //2nd player card
