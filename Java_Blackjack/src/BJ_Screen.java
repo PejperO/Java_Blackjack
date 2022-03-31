@@ -32,7 +32,6 @@ public class BJ_Screen extends JPanel implements Runnable{
 
     public static void backGround(Graphics g) throws IOException{ //making a background
         g.drawImage(ImageIO.read(new File("data/img/BGround/BGround3.2.png")),0,0,null);   //table
-
         for(int i=0; i < 12; i=i+2) //adding all cards look
             card.drawReverse(g, 1115, 10 + i);
     }
